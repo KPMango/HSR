@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="kor">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>유물 속성 시뮬레이터</title>
+  <link rel="stylesheet" href="styles.css">
+</head> 
+
+<body>
+  <h1>유물 속성 시뮬레이터</h1>
+
+  <div class="container">
+    <h2>부 옵션 속성 (각 부 옵션은 최대 36, 총 부 옵션 합은 54. 최소 4개 옵션은 0이 아니어야 함)</h2>
+    <div class="attribute">
+      <label for="hp">체력:</label>
+      <input type="number" id="hp" value="0" disabled>
+      <input type="number" id="enhancementCountHP" min="0" max="36" value="1">
+    </div>
+    <div class="attribute">
+      <label for="hpPercent">체력 %:</label>
+      <input type="number" id="hpPercent" value="0" disabled> 
+      <input type="number" id="enhancementCountHPP" min="0" max="36" value="1">
+    </div>
+    <div class="attribute">
+      <label for="attack">공격력:</label>
+      <input type="number" id="attack" value="0" disabled>
+      <input type="number" id="enhancementCountAT" min="0" max="36" value="1">
+    </div>
+    <div class="attribute">
+      <label for="attackPercent">공격력 %:</label>
+      <input type="number" id="attackPercent" value="0" disabled>
+      <input type="number" id="enhancementCountATP" min="0" max="36" value="1">
+    </div>
+    <div class="attribute">
+      <label for="defense">방어력:</label>
+      <input type="number" id="defense" value="0" disabled>
+      <input type="number" id="enhancementCountDF" min="0" max="36" value="1">
+    </div>
+    <div class="attribute">
+      <label for="defensePercent">방어력 %:</label>
+      <input type="number" id="defensePercent" value="0" disabled>
+      <input type="number" id="enhancementCountDFP" min="0" max="36" value="1">
+    </div>
+    <div class="attribute">
+      <label for="speed">속도:</label>
+      <input type="number" id="speed" value="0" disabled>
+      <input type="number" id="enhancementCountSP" min="0" max="36" value="1">
+    </div>
+    <div class="attribute">
+      <label for="criticalChance">치명타 확률:</label>
+      <input type="number" id="criticalChance" value="0" disabled>
+      <input type="number" id="enhancementCountCC" min="0" max="36" value="1">
+    </div>
+    <div class="attribute">
+      <label for="criticalDamage">치명타 피해:</label>
+      <input type="number" id="criticalDamage" value="0" disabled>
+      <input type="number" id="enhancementCountCD" min="0" max="36" value="1">
+    </div>
+    <div class="attribute">
+      <label for="specialEffect">격파 특수효과:</label>
+      <input type="number" id="specialEffect" value="0" disabled>
+      <input type="number" id="enhancementCountSE" min="0" max="36" value="1">
+    </div>
+    <div class="attribute">
+      <label for="healingBonus">치유량 보너스:</label>
+      <input type="number" id="healingBonus" value="0" disabled>
+      <input type="number" id="enhancementCountHB" min="0" max="36" value="1">
+    </div>
+    <div class="attribute">
+      <label for="energyRecovery">에너지 회복효율:</label>
+      <input type="number" id="energyRecovery" value="0" disabled>
+      <input type="number" id="enhancementCountER" min="0" max="36" value="1">
+    </div>
+    <div class="attribute">
+      <label for="hitEffect">효과 명중:</label>
+      <input type="number" id="hitEffect" value="0" disabled>
+      <input type="number" id="enhancementCountHE" min="0" max="36" value="1">
+    </div>
+    <div class="attribute">
+      <label for="effectResistance">효과 저항:</label>
+      <input type="number" id="effectResistance" value="0" disabled>
+      <input type="number" id="enhancementCountRE" min="0" max="36" value="1">
+    </div>
+    <div class="attribute">
+      <label for="elementDamage">속성 피해 증가:</label>
+      <input type="number" id="elementDamage" value="0" disabled>
+      <input type="number" id="enhancementCountED" min="0" max="36" value="1">
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>주 옵션(미구현임. 위 속성탭에 10단계 추가하면 주옵임(ex: 치확주옵15강=32.4%=부옵(3.24%)10개)</h2>
+    <div class="dropdown-description">머리</div>
+    <select id="head">
+      <option value="hp">체력</option>
+      <option value="hpPercent">체력%</option>
+      <option value="attack">공격력</option>
+      <option value="attackPercent">공격력%</option>
+      <option value="defense">방어력</option>
+      <option value="defensePercent">방어력%</option>
+      <option value="speed">속도</option>
+      <option value="criticalChance">치명타 확률</option>
+      <option value="criticalDamage">치명타 피해</option>
+      <option value="specialEffect">격파 특수효과</option>
+      <option value="healingBonus">치유량 보너스</option>
+      <option value="energyRecharge">에너지 회복효율</option>
+      <option value="effectHit">효과 명중</option>
+      <option value="effectResistance">효과 저항</option>
+      <option value="elementDamage">속성 피해 증가</option>
+    </select>
+    <button id="increaseButton">상승</button>
+  </div>
+  <div class="dropdown-description">핸드</div>
+  <select id="head">
+    <option value="hp">체력</option>
+    <option value="hpPercent">체력%</option>
+    <option value="attack">공격력</option>
+    <option value="attackPercent">공격력%</option>
+    <option value="defense">방어력</option>
+    <option value="defensePercent">방어력%</option>
+    <option value="speed">속도</option>
+    <option value="criticalChance">치명타 확률</option>
+    <option value="criticalDamage">치명타 피해</option>
+    <option value="specialEffect">격파 특수효과</option>
+    <option value="healingBonus">치유량 보너스</option>
+    <option value="energyRecharge">에너지 회복효율</option>
+    <option value="effectHit">효과 명중</option>
+    <option value="effectResistance">효과 저항</option>
+    <option value="elementDamage">속성 피해 증가</option>
+  </select>
+  <button id="increaseButton">상승</button>
+</div> <div class="dropdown-description">바디</div>
+<select id="head">
+  <option value="hp">체력</option>
+  <option value="hpPercent">체력%</option>
+  <option value="attack">공격력</option>
+  <option value="attackPercent">공격력%</option>
+  <option value="defense">방어력</option>
+  <option value="defensePercent">방어력%</option>
+  <option value="speed">속도</option>
+  <option value="criticalChance">치명타 확률</option>
+  <option value="criticalDamage">치명타 피해</option>
+  <option value="specialEffect">격파 특수효과</option>
+  <option value="healingBonus">치유량 보너스</option>
+  <option value="energyRecharge">에너지 회복효율</option>
+  <option value="effectHit">효과 명중</option>
+  <option value="effectResistance">효과 저항</option>
+  <option value="elementDamage">속성 피해 증가</option>
+</select>
+<button id="increaseButton">상승</button>
+</div> <div class="dropdown-description">신발</div>
+<select id="head">
+  <option value="hp">체력</option>
+  <option value="hpPercent">체력%</option>
+  <option value="attack">공격력</option>
+  <option value="attackPercent">공격력%</option>
+  <option value="defense">방어력</option>
+  <option value="defensePercent">방어력%</option>
+  <option value="speed">속도</option>
+  <option value="criticalChance">치명타 확률</option>
+  <option value="criticalDamage">치명타 피해</option>
+  <option value="specialEffect">격파 특수효과</option>
+  <option value="healingBonus">치유량 보너스</option>
+  <option value="energyRecharge">에너지 회복효율</option>
+  <option value="effectHit">효과 명중</option>
+  <option value="effectResistance">효과 저항</option>
+  <option value="elementDamage">속성 피해 증가</option>
+</select>
+<button id="increaseButton">상승</button>
+</div> <div class="dropdown-description">차원 구체</div>
+<select id="head">
+  <option value="hp">체력</option>
+  <option value="hpPercent">체력%</option>
+  <option value="attack">공격력</option>
+  <option value="attackPercent">공격력%</option>
+  <option value="defense">방어력</option>
+  <option value="defensePercent">방어력%</option>
+  <option value="speed">속도</option>
+  <option value="criticalChance">치명타 확률</option>
+  <option value="criticalDamage">치명타 피해</option>
+  <option value="specialEffect">격파 특수효과</option>
+  <option value="healingBonus">치유량 보너스</option>
+  <option value="energyRecharge">에너지 회복효율</option>
+  <option value="effectHit">효과 명중</option>
+  <option value="effectResistance">효과 저항</option>
+  <option value="elementDamage">속성 피해 증가</option>
+</select>
+<button id="increaseButton">상승</button>
+</div> <div class="dropdown-description">연결 매듭</div>
+<select id="head">
+  <option value="hp">체력</option>
+  <option value="hpPercent">체력%</option>
+  <option value="attack">공격력</option>
+  <option value="attackPercent">공격력%</option>
+  <option value="defense">방어력</option>
+  <option value="defensePercent">방어력%</option>
+  <option value="speed">속도</option>
+  <option value="criticalChance">치명타 확률</option>
+  <option value="criticalDamage">치명타 피해</option>
+  <option value="specialEffect">격파 특수효과</option>
+  <option value="healingBonus">치유량 보너스</option>
+  <option value="energyRecharge">에너지 회복효율</option>
+  <option value="effectHit">효과 명중</option>
+  <option value="effectResistance">효과 저항</option>
+  <option value="elementDamage">속성 피해 증가</option>
+</select>
+<button id="increaseButton">상승</button>
+</div>
+
+  
+<p id="result"></p>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
